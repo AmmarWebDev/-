@@ -72,8 +72,9 @@ async function showPrayersTimings() {
   try {
     // Gets Data From API
     const API = `https://api.aladhan.com/v1/timingsByCity/${user.dateForAPI}?city=${user.city}&country=${cities.get(user.city).country}&method=${cities.get(user.city).method}`;
-    const response = await axios.get(API);
-    const data = response.data.data;
+    const response = await fetch(API);
+    const responseJSON = await response.json();
+    const data = responseJSON.data;
 
     /* DOM Creation */
     // resets the old timings
