@@ -3,14 +3,14 @@
 /* Default User Info */
 const userDefaultCity = 'Alexandria';
 const today = new Date();
-const offsetDate = new Date(today.getTime() - (today.getTimezoneOffset() * 60_000));
 
-const day = String(offsetDate.getDate()).padStart(2, '0');
-const month = String(offsetDate.getMonth() + 1).padStart(2, '0');
-const year = offsetDate.getFullYear();
+const day = String(today.getDate()).padStart(2, '0');
+const month = String(today.getMonth() + 1).padStart(2, '0');
+const year = today.getFullYear();
 
-const formattedUserDate = `${year}-${month}-${day}`;
-const formattedAPIDate = `${day}-${month}-${year}`;
+const formattedUserDate = `${year}-${month}-${day}`;  // e.g., "2025-05-02"
+const formattedAPIDate = `${day}-${month}-${year}`;   // e.g., "02-05-2025"
+
 
 
 /* User Info (if the defaults ones are changed) */
